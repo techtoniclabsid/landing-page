@@ -1,6 +1,6 @@
 import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/navbar";
+import Navbar from "@/components/core/navbar/navbar";
 
 export const metadata = {
   title: "Techtoniclabs",
