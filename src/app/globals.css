@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pt_sans);
+}
+
+.space-mono {
+  font-family: var(--font-space_mono);
+}
+
+.pt-sans {
+  font-family: var(--font-pt_sans);
 }
 
 @layer utilities {
@@ -75,4 +83,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.wrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
 }
