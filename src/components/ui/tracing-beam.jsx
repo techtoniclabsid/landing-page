@@ -37,7 +37,7 @@ export const TracingBeam = ({ children, className }) => {
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
+      className={cn("relative w-full max-w-6xl mx-auto h-full", className)}
     >
       <div className="absolute -left-4 md:-left-20 top-3">
         <motion.div
@@ -68,15 +68,15 @@ export const TracingBeam = ({ children, className }) => {
           />
         </motion.div>
         <svg
-          viewBox={`0 0 20 ${svgHeight}`}
+          viewBox={`0 0 20 ${1000}`}
           width="20"
           // Set the SVG height
-          height={svgHeight}
+          height={1000}
           className=" ml-4 block"
           aria-hidden="true"
         >
           <motion.path
-            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
+            d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${1000}`}
             fill="none"
             stroke="#9091A0"
             strokeOpacity="0.16"
