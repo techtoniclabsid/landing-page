@@ -9,7 +9,7 @@ const Features = () => {
       title: "Share Your Vision",
       description: (
         <>
-          <p>Tell us about your goals, ideas, and preferences.</p>
+          <p>lorem ipsum dolor sit amet et consectetur adipiscing</p>
         </>
       ),
       image: "/vision.jpg",
@@ -18,7 +18,7 @@ const Features = () => {
       title: "We Design & Build",
       description: (
         <>
-          <p>Watch your dream website come to life with our expertise.</p>
+          <p>lorem ipsum dolor sit amet et consectetur adipiscing</p>
         </>
       ),
 
@@ -28,7 +28,7 @@ const Features = () => {
       title: "Launch & Thrive",
       description: (
         <>
-          <p>Go live with a website that grows your business.</p>
+          <p>lorem ipsum dolor sit amet et consectetur adipiscing</p>
         </>
       ),
 
