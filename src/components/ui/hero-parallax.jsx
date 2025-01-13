@@ -90,7 +90,7 @@ export const HeroParallax = ({ products }) => {
 
 export const Header = () => {
   return (
-    <div className="sm:wrapper max-w-7xl relative mx-auto py-20 md:py-40 w-full left-0 top-0 flex flex-col justify-center items-center">
+    <div className="sm:mx-auto max-w-7xl relative px-4 py-20 md:py-40 w-full left-0 top-0 flex flex-col justify-center items-center">
       <h1 className="text-3xl md:text-6xl font-bold dark:text-white text-center">
         Craft Stunning <span className="text-cyan-500">Websites</span> That Work{" "}
         <br /> as Hard as You Do

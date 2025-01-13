@@ -42,24 +42,24 @@ const Features = () => {
         <Badge className="bg-cyan-100 text-cyan-500 text-lg sm:text-xl mb-5">
           How it works
         </Badge>
-        <h1 className="lg:text-6xl sm:text-4xl text-4xl space-mono ">
-          Develop everything with us
+        <h1 className="lg:text-6xl sm:text-4xl text-3xl font-bold ">
+          Develop your website idea with us
         </h1>
       </div>
       <TracingBeam className="px-6 mt-20">
-        <div className="max-w-8xl mx-2 sm:mx-0 antialiased pt-4 relative">
+        <div className="max-w-8xl ml-4 sm:mx-0 antialiased pt-4 relative">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-20">
               <div className="grid grid-cols-2 sm:gap-20 gap-2">
                 <div>
-                  <Badge className="bg-cyan-100 text-cyan-500 text-md sm:text-lg lg:text-xl mb-5">
+                  <Badge className="bg-cyan-100 text-cyan-500 text-md sm:text-lg lg:text-xl mb-5 ">
                     {item.title}
                   </Badge>
-                  <h1 className="text-lg sm:text-2xl lg:text-4xl mb-4 font-bold">
+                  <h1 className="text-lg sm:text-2xl lg:text-4xl mb-4">
                     {item.description}
                   </h1>
                 </div>
-                <div className="text-xl  prose prose-sm dark:prose-invert">
+                <div className="text-xl  prose prose-sm dark:prose-invert ">
                   {item?.image && (
                     <Image
                       src={item.image}
