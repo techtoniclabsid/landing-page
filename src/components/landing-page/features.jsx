@@ -1,6 +1,5 @@
 import React from "react";
 import { TracingBeam } from "../ui/tracing-beam";
-import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 
@@ -39,7 +38,7 @@ const Features = () => {
   return (
     <div className="h-full mt-20">
       <div className="text-center">
-        <Badge className="bg-cyan-100 text-cyan-500 text-lg sm:text-xl mb-5">
+        <Badge className="bg-cyan-100 dark:shadow-md dark:shadow-cyan-500 dark:border-cyan-300 text-cyan-500 text-lg sm:text-xl mb-5">
           How it works
         </Badge>
         <h1 className="lg:text-6xl sm:text-4xl text-3xl font-bold ">
@@ -52,7 +51,7 @@ const Features = () => {
             <div key={`content-${index}`} className="mb-20">
               <div className="grid grid-cols-2 sm:gap-20 gap-2">
                 <div>
-                  <Badge className="bg-cyan-100 text-cyan-500 text-md sm:text-lg lg:text-xl mb-5 ">
+                  <Badge className="bg-cyan-100 text-cyan-500 text-md sm:text-lg lg:text-xl mb-5 dark:shadow-cyan-500 dark:border-cyan-300  dark:shadow-md">
                     {item.title}
                   </Badge>
                   <h1 className="text-lg sm:text-2xl lg:text-4xl mb-4">
