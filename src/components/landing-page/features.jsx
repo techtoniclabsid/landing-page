@@ -49,7 +49,7 @@ const Features = () => {
         <div className="max-w-8xl ml-4 sm:mx-0 antialiased pt-4 relative">
           {dummyContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-20">
-              <div className="grid grid-cols-2 sm:gap-20 gap-2">
+              <div className="grid grid-rows-1 sm:grid-cols-2 sm:gap-20 gap-2">
                 <div>
                   <Badge className="bg-cyan-100 text-cyan-500 text-md sm:text-lg lg:text-xl mb-5 dark:shadow-cyan-500 dark:border-cyan-300  dark:shadow-md">
                     {item.title}

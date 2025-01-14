@@ -1,5 +1,3 @@
-import LanguageToggle from "@/components/ui/languageToggle";
-import { ModeToggle } from "@/components/ui/themetoggle";
 import React from "react";
 
 const Navbar = () => {
@@ -10,10 +8,6 @@ const Navbar = () => {
           <h1 className="space-mono text-2xl">
             techtonic<span className="text-cyan-500">labs.</span>
           </h1>
-        </div>
-        <div className="flex gap-2 sm:gap-4 items-center">
-          <ModeToggle />
-          <LanguageToggle />
         </div>
       </div>
     </div>
