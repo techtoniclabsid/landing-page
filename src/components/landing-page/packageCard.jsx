@@ -128,10 +128,13 @@ const PackageCard = () => {
       <h2 className="text-center text-xl sm:text-2xl lg:text-4xl mt-5 text-cyan-500 font-bold">
         Here's our Affordable Plans for Every Business.
       </h2>
-      <div className="flex gap-10 justify-center mt-20 flex-col sm:flex-row">
+      <div className="flex gap-10 justify-center mt-20 flex-col lg:flex-row items-center lg:items-start">
         {cardPackage.map((value, index) =>
           index === 1 ? (
-            <Card key={index} className="w-fit bg-cyan-50 border-cyan-300">
+            <Card
+              key={index}
+              className="w-fit  bg-cyan-50 border-cyan-300 dark:bg-cyan-500 shadow-lg shadow-cyan-300"
+            >
               <CardHeader>
                 <CardTitle className="flex flex-row justify-between items-center">
                   {value.title}{" "}
