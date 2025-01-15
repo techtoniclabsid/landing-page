@@ -121,7 +121,7 @@ const PackageCard = () => {
   ];
 
   return (
-    <div className="wrapper ">
+    <div className="wrapper " id="targetSection">
       <h1 className="lg:text-6xl sm:text-4xl text-3xl font-bold text-center">
         Interested with our services?
       </h1>
