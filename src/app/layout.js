@@ -1,7 +1,7 @@
 import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/core/navbar/navbar";
-import { ThemeProvider } from "@/components/ui/theme-providers";
+import Script from "next/script";
 
 export const metadata = {
   title: "Techtoniclabs",
@@ -24,20 +24,14 @@ export const pt_sans = PT_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Script src="/brevo.js" strategy="afterInteractive" />
       <body
         className={`${space_mono.variable} ${pt_sans.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="pt_sans">
-            <Navbar />
-            {children}
-          </main>
-        </ThemeProvider>
+        <main className="pt_sans">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );
