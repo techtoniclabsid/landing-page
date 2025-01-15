@@ -28,6 +28,14 @@ export default function RootLayout({ children }) {
         className={`${space_mono.variable} ${pt_sans.variable} antialiased`}
       >
         <GoogleTagManager gtmId="GTM-PR6RF56D" />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PR6RF56D"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <main className="pt_sans">
           <Navbar />
           {children}
