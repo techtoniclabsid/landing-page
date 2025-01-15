@@ -2,6 +2,7 @@ import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/core/navbar/navbar";
 import Script from "next/script";
+import { ThemeProvider } from "@/components/ui/theme-providers";
 
 export const metadata = {
   title: "Techtoniclabs",
@@ -28,10 +29,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${space_mono.variable} ${pt_sans.variable} antialiased`}
       >
-        <main className="pt_sans">
-          <Navbar />
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="pt_sans">
+            <Navbar />
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
