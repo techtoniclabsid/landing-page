@@ -207,7 +207,7 @@ const PackageCard = () => {
       <h2 className="text-center text-xl sm:text-2xl lg:text-4xl mt-5 text-cyan-500 font-bold">
         Here's our Affordable Plans for Every Business.
       </h2>
-      <div className="grid grid-cols-4 justify-center mt-20  gap-10">
+      <div className="grid grid-rows-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  justify-center mt-20  gap-10">
         {cardPackage.map((value, index) =>
           index === 1 ? (
             <Card
@@ -234,7 +234,7 @@ const PackageCard = () => {
               </CardFooter>
             </Card>
           ) : (
-            <Card key={index} className="w-fit flex flex-col items-center">
+            <Card key={index} className=" flex flex-col items-center">
               <CardHeader>
                 <CardTitle>{value.title}</CardTitle>
               </CardHeader>
