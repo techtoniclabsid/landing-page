@@ -89,6 +89,12 @@ export const HeroParallax = ({ products }) => {
 };
 
 export const Header = () => {
+  const handleScroll = () => {
+    const target = document.getElementById("targetSection");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="sm:mx-auto max-w-7xl relative px-4 py-20 md:py-40 w-full left-0 top-0 flex flex-col justify-center items-center">
       <h1 className="text-3xl md:text-6xl font-bold dark:text-white text-center">
@@ -104,6 +110,7 @@ export const Header = () => {
         <HoverBorderGradient
           containerClassName="rounded-full"
           as="button"
+          onClick={handleScroll}
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
         >
           <span>Start Your Website Today</span>
