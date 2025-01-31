@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
@@ -6,8 +7,8 @@ import Link from "next/link";
 import { HoverBorderGradient } from "./hover-border-gradient";
 
 export const HeroParallax = ({ products }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
+  const firstRow = products.slice(0, 3);
+  const secondRow = products.slice(3, 6);
   const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -44,7 +45,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-full pt-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-full pt-40 overflow-hidden   antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -89,12 +90,6 @@ export const HeroParallax = ({ products }) => {
 };
 
 export const Header = () => {
-  const handleScroll = () => {
-    const target = document.getElementById("targetSection");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <div className="sm:mx-auto max-w-7xl relative px-4 py-20 md:py-40 w-full left-0 top-0 flex flex-col justify-center items-center">
       <h1 className="text-3xl md:text-6xl font-bold dark:text-white text-center">
@@ -110,10 +105,11 @@ export const Header = () => {
         <HoverBorderGradient
           containerClassName="rounded-full"
           as="button"
-          onClick={handleScroll}
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
         >
-          <span>Start Your Website Today</span>
+          <Link href={"/pricing"}>
+            <span>Start Your Website Today</span>
+          </Link>
         </HoverBorderGradient>
       </div>
     </div>
