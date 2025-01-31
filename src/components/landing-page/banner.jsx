@@ -40,31 +40,6 @@ const Banner = () => {
       thumbnail:
         "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
     },
-
-    {
-      title: "Algochurn",
-      link: "https://algochurn.com",
-      thumbnail:
-        "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-    },
-    {
-      title: "Aceternity UI",
-      link: "https://ui.aceternity.com",
-      thumbnail:
-        "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-    },
-    {
-      title: "Tailwind Master Kit",
-      link: "https://tailwindmasterkit.com",
-      thumbnail:
-        "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-    },
-    {
-      title: "SmartBridge",
-      link: "https://smartbridgetech.com",
-      thumbnail:
-        "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-    },
   ];
   return (
     <div>

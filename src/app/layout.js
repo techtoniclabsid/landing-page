@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/core/navbar/navbar";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/ui/theme-providers";
+import Footer from "@/components/landing-page/footer";
 
 export const metadata = {
   title: "Techtoniclabs",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           <main className="pt_sans">
             <Navbar />
             {children}
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
