@@ -1,7 +1,9 @@
 import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/core/navbar/navbar";
-import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
+import { ThemeProvider } from "@/components/ui/theme-providers";
+import Footer from "@/components/landing-page/footer";
 
 export const metadata = {
   title: "Techtoniclabs",
@@ -24,22 +26,22 @@ export const pt_sans = PT_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Script src="/brevo.js" strategy="afterInteractive" />
       <body
         className={`${space_mono.variable} ${pt_sans.variable} antialiased`}
       >
-        <GoogleTagManager gtmId="GTM-PR6RF56D" />
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PR6RF56D"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        <main className="pt_sans">
-          <Navbar />
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="pt_sans">
+            <Navbar />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,8 +1,8 @@
 import Banner from "@/components/landing-page/banner";
-import Features from "@/components/landing-page/features";
-import Footer from "@/components/landing-page/footer";
-import PackageCard from "@/components/landing-page/packageCard";
-import { Card } from "@/components/ui/card";
+import { Features } from "@/components/landing-page/features";
+import GetStarted from "@/components/landing-page/getStarted";
+import { WhyUs } from "@/components/landing-page/whyUs";
+import { Workflow } from "@/components/landing-page/workFlow";
 
 export default function Home() {
   return (
@@ -14,10 +14,13 @@ export default function Home() {
         <Features />
       </section>
       <section>
-        <PackageCard />
+        <Workflow />
       </section>
       <section>
-        <Footer />
+        <WhyUs />
+      </section>
+      <section>
+        <GetStarted />
       </section>
     </div>
   );
