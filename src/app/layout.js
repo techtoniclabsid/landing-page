@@ -6,8 +6,9 @@ import { ThemeProvider } from "@/components/ui/theme-providers";
 import Footer from "@/components/landing-page/footer";
 
 export const metadata = {
-  title: "Techtoniclabs",
-  description: "best web developer in town",
+  title: "Techtoniclabs - Website Crafter",
+  description:
+    "From vision to launch, we help you build websites that captivate, convert, and grow your business.",
 };
 export const space_mono = Space_Mono({
   subsets: ["latin"],
