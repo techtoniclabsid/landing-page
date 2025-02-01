@@ -7,7 +7,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "@/components/landing-page/footer";
 
 export const metadata = {
-  title: "Techtoniclabs - Website Crafter",
+  title: "Techtoniclabs - Web Development Service",
   description:
     "From vision to launch, we help you build websites that captivate, convert, and grow your business.",
 };
