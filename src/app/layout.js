@@ -9,7 +9,7 @@ import Footer from "@/components/landing-page/footer";
 export const metadata = {
   title: "Techtoniclabs - Web Development Service",
   description:
-    "From vision to launch, we help you build websites that captivate, convert, and grow your business.",
+    "From vision to launch, we specialize in helping you build stunning, high-performing websites that captivate your audience, drive conversions, and grow your business. Our team of expert designers and developers work closely with you to create custom web solutions tailored to your unique goals. Whether you need a sleek, modern design, seamless user experience, or robust e-commerce functionality, we have got you covered. We focus on delivering websites that not only look great but also perform exceptionally, ensuring your brand stands out in a competitive digital landscape. Let us transform your ideas into a powerful online presence that engages visitors, builds trust, and turns leads into loyal customers. Partner with us to take your business to the next level.",
 };
 export const space_mono = Space_Mono({
   subsets: ["latin"],
