@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/core/navbar/navbar";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/ui/theme-providers";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "@/components/landing-page/footer";
 
 export const metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <GoogleAnalytics gaId="G-7N5PNP1BEY" />
           <main className="pt_sans">
             <Navbar />
             {children}
