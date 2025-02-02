@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { cn } from "@/core/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,34 +20,9 @@ import {
 } from "@/core/components/ui/accordion";
 import { Menu } from "lucide-react";
 import { Button } from "@/core/components/ui/button";
+import ProductsPeek, { ProductTypes } from "./ProductsPeek";
 
-const components = [
-  {
-    title: "Landing Page",
-    href: "/products/landing-page",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Company Profile",
-    href: "/products/company-profile",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Blog & News",
-    href: "/products/blog-and-news",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Marketplace",
-    href: "/products/marketplace",
-    description: "Visually or semantically separates content.",
-  },
-];
-
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavbar = () => {
@@ -57,8 +31,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed z-50 w-screen bg-white/70 dark:bg-black/70 border-b border-zinc-800 backdrop-filter backdrop-blur-md">
-        <div className="wrapper h-full py-5 md:py-4 flex gap-10 justify-between items-center">
+      <div className="fixed z-50 w-screen bg-white/70 dark:bg-black/80 border-b border-zinc-800 backdrop-filter backdrop-blur-md">
+        <div className="wrapper h-full py-4 flex gap-10 justify-between items-center">
           <Link href="/">
             <h1 className="space-mono text-xl md:text-2xl">
               techtonic<span className="text-cyan-500">labs.</span>
@@ -67,12 +41,15 @@ const Navbar = () => {
 
           {/* Mobile Navbar Trigger */}
           <Button
-            variant="outline"
-            size="icon"
-            className="block md:hidden"
+            variant="link"
+            className="flex md:hidden p-0"
             onClick={handleNavbar}
           >
-            <Menu size={96} />
+            <Menu
+              size={32}
+              className="!size-8 stroke-zinc-500"
+              strokeWidth="1px"
+            />
           </Button>
 
           {/* Desktop Navbar */}
@@ -82,18 +59,8 @@ const Navbar = () => {
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-                    <NavigationMenuContent data-state={"open"}>
-                      <ul className="grid grid-cols-2 gap-3 p-4 w-[500px] lg:w-[600px]">
-                        {components.map((component) => (
-                          <ListItem
-                            key={component.href}
-                            title={component.title}
-                            href={component.href}
-                          >
-                            {component.description}
-                          </ListItem>
-                        ))}
-                      </ul>
+                    <NavigationMenuContent>
+                      <ProductsPeek />
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
@@ -156,22 +123,39 @@ const Navbar = () => {
         modal={false}
         className="block md:hidden"
       >
-        <SheetContent side="top" className="z-40 top-[80px]">
-          <ul>
-            <li className="mb-2">
-              <Accordion type="single" className="text-lg" collapsible>
+        <SheetContent
+          side="top"
+          className="flex flex-col justify-between z-40 h-[calc(100%-73px)] top-[73px]"
+        >
+          <ul className="grid gap-2">
+            <li>
+              <Accordion
+                type="single"
+                className="text-lg"
+                defaultValue="products"
+                collapsible
+              >
                 <AccordionItem value="products" className="border-0">
                   <AccordionTrigger className="px-4 py-2 hover:no-underline">
                     <span>Products</span>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6">
-                    <ul className="grid gap-2">
-                      {components.map((component) => (
-                        <li key={component.href}>
-                          <Link href={component.href}>
-                            <div className="grid p-2 bg-zinc-900 rounded-md">
-                              <span className="text-lg">{component.title}</span>
-                              <span>{component.description}</span>
+                  <AccordionContent>
+                    <ul className="grid gap-3">
+                      {ProductTypes.map((product) => (
+                        <li key={product.href}>
+                          <Link href={product.href}>
+                            <div className="flex items-center gap-3 mx-4 px-3 py-2 bg-zinc-900 rounded-md">
+                              <div className="shrink-0 grow-0 flex items-center justify-center size-9 bg-zinc-900 border border-zinc-800 rounded-md [&_svg]:size-4">
+                                {product.icon}
+                              </div>
+                              <div className="grid">
+                                <span className="text-base">
+                                  {product.title}
+                                </span>
+                                <span className="text-sm text-muted-foreground leading-snug line-clamp-1">
+                                  {product.description}
+                                </span>
+                              </div>
                             </div>
                           </Link>
                         </li>
@@ -181,7 +165,7 @@ const Navbar = () => {
                 </AccordionItem>
               </Accordion>
             </li>
-            <li className="mb-2">
+            <li>
               <Button
                 variant="ghost"
                 className="w-full text-left text-lg"
@@ -193,7 +177,7 @@ const Navbar = () => {
                 </Link>
               </Button>
             </li>
-            <li className="mb-2">
+            <li>
               <Button
                 variant="ghost"
                 className="w-full text-left text-lg"
@@ -206,35 +190,17 @@ const Navbar = () => {
               </Button>
             </li>
           </ul>
+          <div className="my-8">
+            <Button
+              className="w-full text-left text-lg"
+              onClick={() => setIsOpen(false)}
+              asChild
+            >
+              <Link href="/support">Contact Sales</Link>
+            </Button>
+          </div>
         </SheetContent>
       </Sheet>
     </>
   );
-};
-
-export const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block h-32 select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
-
-export default Navbar;
+}

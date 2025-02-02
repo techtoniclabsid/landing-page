@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-black">
+    <div className="border-t border-zinc-800">
       <footer className=" wrapper flex text-primary-content py-20 mt-40 justify-between">
         <aside>
           <p className="font-bold text-2xl">Techtoniclabs. </p>

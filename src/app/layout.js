@@ -1,6 +1,6 @@
 import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/core/components/navbar";
+import Navbar from "@/core/components/Navbar";
 import Script from "next/script";
 import { ThemeProvider } from "@/core/components/ui/theme-providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
