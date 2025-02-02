@@ -1,4 +1,4 @@
-import PackageCard from "@/components/landing-page/packageCard";
+import PackageCard from "@/landing-page/components/packageCard";
 import React from "react";
 import {
   Table,
@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/core/components/ui/table";
 import { CheckCircle2 } from "lucide-react";
 
 const featureStatus = [

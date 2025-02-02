@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroParallax } from "../ui/hero-parallax";
+import { HeroParallax } from "../../core/components/ui/hero-parallax";
 
 const Banner = () => {
   const products = [
