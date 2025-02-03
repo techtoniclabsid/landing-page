@@ -10,8 +10,8 @@ body {
   font-family: var(--font-space_mono);
 }
 
-.pt-sans {
-  font-family: var(--font-pt_sans);
+.inter {
+  font-family: var(--font-inter);
 }
 
 @layer utilities {

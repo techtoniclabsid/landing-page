@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { HoverBorderGradient } from "./hover-border-gradient";
+import { Button } from "./button";
 
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 3);
@@ -66,7 +67,7 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -91,26 +92,37 @@ export const HeroParallax = ({ products }) => {
 
 export const Header = () => {
   return (
-    <div className="sm:mx-auto max-w-7xl relative px-4 py-20 md:py-40 w-full left-0 top-0 flex flex-col justify-center items-center">
-      <h1 className="text-3xl md:text-6xl font-bold dark:text-white text-center">
-        Craft Stunning <span className="text-cyan-500">Websites</span> That Work{" "}
-        <br /> as Hard as You Do
+    <div className="z-10 relative left-0 top-0 flex flex-col justify-center items-center w-full max-w-7xl sm:mx-auto px-8 md:px-4 py-10 md:py-40">
+      <h1 className="text-5xl md:text-6xl font-extrabold leading-tight md:leading-none md:text-center">
+        <span className="inter">Your Dream Website</span>
+        <br />
+        <span className="inter bg-gradient-to-r from-cyan-500 to-indigo-500 text-transparent bg-clip-text">
+          Built to Perfection
+        </span>
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-center">
-        From vision to launch, we help you build websites that captivate,
-        convert, and grow your business.
+      <p className="mt-8 max-w-sm md:max-w-2xl text-base md:text-lg md:text-center text-zinc-200">
+        From sleek designs to seamless functionality, we craft professional
+        websites that captivate, convert, and grow your business. Your success
+        starts here.
       </p>
 
-      <div className="mt-6">
-        <HoverBorderGradient
-          containerClassName="rounded-full"
-          as="button"
-          className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+      <div className="mt-12 md:mt-6 flex flex-col md:flex-row gap-4 md:gap-8 w-full justify-center">
+        <Button
+          className="p-4 md:px-12 md:py-6 text-sm md:text-base bg-cyan-500 hover:bg-cyan-600"
+          asChild
         >
-          <Link href={"/pricing"}>
-            <span>Start Your Website Today</span>
+          <Link href="/pricing">Get Started</Link>
+        </Button>
+
+        <Button
+          variant="outline"
+          className="px-6 py-4 md:px-12 md:py-6 text-sm md:text-base bg-transparent border-zinc-200 hover:bg-zinc-200 hover:text-black"
+          asChild
+        >
+          <Link href="https://wa.me/62811223344" target="_blank">
+            Contact Us
           </Link>
-        </HoverBorderGradient>
+        </Button>
       </div>
     </div>
   );
@@ -122,26 +134,18 @@ export const ProductCard = ({ product, translate }) => {
       style={{
         x: translate,
       }}
-      whileHover={{
-        y: -20,
-      }}
       key={product.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
-      <Link
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
-        <Image
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
-        />
-      </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <Image
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="object-cover object-left-top absolute h-full w-full inset-0"
+        alt={product.title}
+      />
+      <div className="absolute inset-0 h-full w-full opacity-0 bg-black pointer-events-none"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 text-white">
         {product.title}
       </h2>
     </motion.div>

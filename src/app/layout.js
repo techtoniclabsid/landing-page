@@ -1,4 +1,4 @@
-import { Space_Mono, PT_Sans } from "next/font/google";
+import { Space_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/core/components/Navbar";
 import Script from "next/script";
@@ -18,10 +18,10 @@ export const space_mono = Space_Mono({
   weight: "700",
 });
 
-export const pt_sans = PT_Sans({
+export const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-pt_sans",
+  variable: "--font-inter",
   weight: ["400", "700"],
 });
 
@@ -29,9 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Script src="/brevo.js" strategy="afterInteractive" />
-      <body
-        className={`${space_mono.variable} ${pt_sans.variable} antialiased`}
-      >
+      <body className={`${space_mono.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

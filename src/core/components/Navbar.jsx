@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed z-50 w-screen bg-white/70 dark:bg-black/80 border-b border-zinc-800 backdrop-filter backdrop-blur-md">
-        <div className="wrapper h-full py-4 flex gap-10 justify-between items-center">
+        <div className="wrapper h-full py-2 md:py-4 flex gap-10 justify-between items-center">
           <Link href="/">
             <h1 className="space-mono text-xl md:text-2xl">
               techtonic<span className="text-cyan-500">labs.</span>
@@ -125,7 +125,7 @@ export default function Navbar() {
       >
         <SheetContent
           side="top"
-          className="flex flex-col justify-between z-40 h-[calc(100%-73px)] top-[73px]"
+          className="flex flex-col justify-between z-40 h-[calc(100%-57px)] top-[57px]"
         >
           <ul className="grid gap-2">
             <li>
