@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { StickyScroll } from "../ui/sticky-scroll-reveal";
+import { StickyScroll } from "../../core/components/ui/sticky-scroll-reveal";
 import Image from "next/image";
 import { Code, Lightbulb, Paintbrush, PaintBucket, Rocket } from "lucide-react";
 

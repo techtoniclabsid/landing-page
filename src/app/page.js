@@ -1,8 +1,8 @@
-import Banner from "@/components/landing-page/banner";
-import { Features } from "@/components/landing-page/features";
-import GetStarted from "@/components/landing-page/getStarted";
-import { WhyUs } from "@/components/landing-page/whyUs";
-import { Workflow } from "@/components/landing-page/workFlow";
+import Banner from "@/landing-page/components/banner";
+import { Features } from "@/landing-page/components/features";
+import GetStarted from "@/landing-page/components/getStarted";
+import { WhyUs } from "@/landing-page/components/whyUs";
+import { Workflow } from "@/landing-page/components/workFlow";
 
 export default function Home() {
   return (
@@ -13,12 +13,12 @@ export default function Home() {
       <section>
         <Features />
       </section>
-      <section>
+      {/* <section>
         <Workflow />
       </section>
       <section>
         <WhyUs />
-      </section>
+      </section> */}
       <section>
         <GetStarted />
       </section>

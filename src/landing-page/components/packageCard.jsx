@@ -5,8 +5,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Button } from "../ui/button";
+} from "../../core/components/ui/card";
+import { Button } from "../../core/components/ui/button";
 import { Phone } from "lucide-react";
 
 import Link from "next/link";

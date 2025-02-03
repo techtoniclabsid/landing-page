@@ -1,10 +1,10 @@
 import { Space_Mono, PT_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/core/navbar/navbar";
+import Navbar from "@/core/components/Navbar";
 import Script from "next/script";
-import { ThemeProvider } from "@/components/ui/theme-providers";
+import { ThemeProvider } from "@/core/components/ui/theme-providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Footer from "@/components/landing-page/footer";
+import Footer from "@/core/components/footer";
 
 export const metadata = {
   title: "Techtoniclabs - Web Development Service",
@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
           disableTransitionOnChange
         >
           <GoogleAnalytics gaId="G-7N5PNP1BEY" />
